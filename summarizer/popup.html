@@ -14,28 +14,20 @@
     </div>
   </header>
   <div class="container">
-    <div class="inpt">
+    <div class="input">
       <input type="text" placeholder="Enter your link over here...">
-      <button>Summarise</button>
+      <button id="summary">Summarise</button>
     </div>
     <div class="opt">
       <h3>Your Summary:</h3>
       <hr>
       <div class="sum">
-      <!-- the summary will appear over here -->
-      rlier this year, for Chrome 88, we announced the availability of a new manifest version for the Chrome extension ecosystem. Years in the making, Manifest V3 is more secure, performant, and privacy-preserving than its predecessor. It is an evolution of the extension platform that takes into consideration both the changing web landscape and the future of browser extensions.
-
-As we look to the future by continuing to iterate on and improve upon Manifest V3 functionality, we also want to share details about the plan to phase out Manifest V2 extensions.
-
-There are two key dates for the phase-out:
-
-January 17, 2022: New Manifest V2 extensions will no longer be accepted by the Chrome Web Store. Developers may still push updates to existing Manifest V2 extensions, but no new Manifest V2 items may be submitted.
-
-January 2023: The Chrome browser will no longer run Manifest V2 extensions. Developers may no longer push updates to existing Manifest V2 extensions.
-
-As these dates draw closer, we will share more details around the Chrome version targeted f
+          <p id="summedtxt"></p>
       </div>
     </div>
   </div>
+  <script src="popup.js"></script>
 </body>
 </html>
+
+
