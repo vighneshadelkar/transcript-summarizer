@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <title>Document</title>
 </head>
+
 <body>
   <header>
     <div class="logo">
@@ -16,25 +19,32 @@
   <div class="container">
     <div class="inpt">
       <!-- <input type="text" placeholder="Enter your link over here..."> -->
-      <h1 class="txt">Press Summarise to get the Summary.</h1>
-      <button>Summarise</button>
+      <h1 id="txt">Press Summarise to get the Summary.</h1>
+      <button id="summary">Summarise</button>
     </div>
     <div class="opt">
       <h3>Your Summary:</h3>
+      <!-- added copy icon -->
+      <i class="ri-file-copy-line copy" id="copyicon"></i>
+      <div class="copy " id="copytext">Copy
+      </div>
+      <br>
+      <br>
+      <!-- copy html ends here -->
       <hr>
+
       <div class="sum">
+        
         <!-- new loading animation -->
-        <div id="lds-spinner"><div></div>
-        <div></div>
-        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div>
-        </div><div></div></div>
+        <div id="loading"></div>
         <!-- loading animation html ends  here -->
 
-      <!-- the summary will appear over here -->
-        <p id="summedtxt"></p>      
+        <!-- the summary will appear over here -->
+        <p id="summedtxt"></p>
       </div>
     </div>
   </div>
   <script src="./popup.js"></script>
 </body>
+
 </html>
