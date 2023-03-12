@@ -48,3 +48,31 @@ btn.addEventListener("click", function() {
         });
     });
 });
+
+// to add copy functionality
+
+const content = document.getElementById("summedtxt").innerHTML;
+const btncopy = document.getElementById("copytext");
+const btnicon=document.getElementById("copyicon");
+
+btncopy.onclick = function () {
+    navigator.clipboard.writeText(content);
+    btncopy.innerHTML="Copied!";
+    btncopy.style.left="26.8rem";
+    setTimeout(() => {
+        btncopy.innerHTML="Copy";
+        btncopy.style.left="27.16rem";
+    }, 3000);
+};
+
+btnicon.onclick = function () {
+    navigator.clipboard.writeText(content);
+    btncopy.innerHTML="Copied!";
+    btncopy.style.left="26.8rem";
+    setTimeout(() => {
+        btncopy.innerHTML="Copy";
+        btncopy.style.left="27.16rem";
+    }, 3000);
+};
+
+
