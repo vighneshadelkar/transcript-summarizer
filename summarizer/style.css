@@ -3,6 +3,27 @@ body{
     margin: 0;
     /* width: 100vw; */
 }
+h3,#copytext{
+  display: inline;
+}
+
+#copyicon{
+  position: relative;
+  left: 29.5rem;
+  font-size: 1.7rem;
+  /* content: 'Copied'; */
+  cursor: pointer;
+}
+#copytext{
+  position: relative;
+  left: 27.16rem;
+  font-size: .9rem;
+  background-color:rgba(0, 0, 0, .15);
+  padding: .01rem .3rem;
+  cursor: pointer;
+  top: .8rem;
+  border-radius: 20px;
+}
 .container{
     padding: 4px;
     margin: 0;
