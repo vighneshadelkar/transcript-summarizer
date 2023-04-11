@@ -15,18 +15,31 @@ def index():
 @app.route("/summary")
 def summary_api():
     url = request.args.get('url', '')
-    # url = request.args.get('https://www.youtube.com/watch?v=8HslUzw35mc', '')
     video_id = url.split('=')[1]
     summary = get_summary(get_transcript(video_id))
-    # summary = get_summary(get_transcript('Yldkh0aOEcg'))
-    # return summary, 200
-    #return render_template('popup.js', summary=summary)
     return summary
 
 
 def get_transcript(video_id):
     # Returns a list of dictionaries
-    transcript_list = YouTubeTranscriptApi.get_transcript(video_id)
+    #transcript_list = YouTubeTranscriptApi.get_transcript(video_id)
+
+    transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+    print(transcript_list)
+    for transcript in transcript_list:
+        if transcript.language_code == 'en':
+            transi = transcript.fetch() 
+            entranscript = ' '.join([d['text'] for d in transi])
+            return entranscript
+
+    for transcript in transcript_list:
+        if transcript.is_translatable == True:
+            transi = transcript.translate('en').fetch()
+            entranscript = ' '.join([d['text'] for d in transi])
+            return entranscript
+        else:
+            return "Subtitles unavailable"
+
 
     # Dictionary format
     '''
@@ -45,7 +58,8 @@ def get_transcript(video_id):
         ]
     '''
 
-    transcript = ' '.join([d['text'] for d in transcript_list])
+    transcript = ' '.join([d['text'] for d in transi])
+    
     return transcript
 
 
