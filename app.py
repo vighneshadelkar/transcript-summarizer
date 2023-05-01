@@ -91,7 +91,7 @@ def get_transcript(video_id):
 def get_summary(transcript,penalty):
     pen=int(1)
     pen+=(int(penalty)-5)/10
-    mxlen = int(110)
+    mxlen = int(100)
     mxlen+=(int(penalty)-5)*15
     print(pen)
     print(mxlen)
