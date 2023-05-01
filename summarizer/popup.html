@@ -37,6 +37,10 @@
       <br>
       <!-- copy html ends here -->
       <hr>
+      <div class="slider-container">
+        <input type="range" min="0" max="10" value="5" class="slider" id="mySlider">
+        <span id="sliderValue">5</span>
+      </div>
 
       <div class="sum">
 
@@ -48,10 +52,7 @@
         <p id="summedtxt"></p>
       </div>
       <!-- <br> -->
-      <div class="slider-container">
-        <input type="range" min="0" max="10" value="5" class="slider" id="mySlider">
-        <span id="sliderValue">5</span>
-      </div>
+
 <!-- <br> -->
       <div class="shrmail">
         <h3>Share Summary
@@ -59,7 +60,7 @@
           <i class="ri-arrow-up-s-line" id="shrup"></i>
         </h3>
         <div id = "email" class="wrap-input100">
-          <input class="input100" type="text" name="email" placeholder="Email">
+          <input id = "mailbox" class="input100" type="text" name="email" placeholder="Email">
           <span class="focus-input100"></span>
           <div class="symbol-input100">
             <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
@@ -71,7 +72,7 @@
           </div>
           <!-- <i class="ri-file-copy-line copy" id="copyicon"></i> -->
         </div>
-        <div id="alert">Summary not generated yet!</div>
+        <div id="alert"></div>
       </div>
     </div>
   </div>

@@ -5,6 +5,7 @@ let loadParent=document.getElementById("loading");
 const slider = document.getElementById("mySlider");
 const output = document.getElementById("sliderValue");
 
+var v_id;
 
 // Display the default slider value
 output.innerHTML = slider.value;
@@ -44,6 +45,7 @@ btn.addEventListener("click", function() {
     chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
         console.log(tabs);
         var url = tabs[0].url;
+        v_id = url;
         console.log(url);
 
         var noturl = "http://127.0.0.1:5000/summary?url=" + url + "$" + output.innerHTML;
@@ -63,6 +65,10 @@ btn.addEventListener("click", function() {
         });
     });
 });
+
+
+
+
 
 // to add copy functionality
 const btncopy = document.getElementById("copytext");
@@ -127,7 +133,33 @@ btnshr.onclick=function () {
   t1=0;
   if (summedtxt.innerHTML=="") {
       alert.style.display="block";
+      alert.innerHTML='Summary not generated yet!';
       t1++;
+  }
+  else if (document.getElementById("mailbox").value=='') {
+      alert.style.display="block";
+      alert.innerHTML='Please enter your email id!';
+      t1++;
+  }
+  else {
+    var email_id=document.getElementById("mailbox").value; 
+    console.log(email_id);
+    fetch("http://127.0.0.1:5000/mail", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            id: v_id,
+            mail_id: email_id,
+            body: summedtxt.innerHTML
+        })            
+    })
+    .then(data => console.log(data))
+    document.getElementById("mailbox").value='';
+    alert.style.display="block";
+    alert.innerHTML='Mail sent!';
+    t1++;
   }
   if (t1>0) {
     setTimeout(() => {

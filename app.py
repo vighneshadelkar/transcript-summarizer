@@ -2,6 +2,7 @@ from flask import Flask, request, render_template
 from youtube_transcript_api import YouTubeTranscriptApi
 from transformers import pipeline
 from flask_mail import Mail, Message
+import os
 
 
 # Define a variable to hold you app
@@ -11,7 +12,7 @@ app = Flask(__name__)
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USERNAME'] = 'goushala1@gmail.com'
-app.config['MAIL_PASSWORD'] = 'tlhfyjtpdkoaedtl'
+app.config['MAIL_PASSWORD'] = os.environ['Pass']
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
@@ -33,19 +34,29 @@ def summary_api():
     video_id, penalty = temp.split('$')
     summary = get_summary(get_transcript(video_id), penalty)
 
-    msg = Message(
-                f'Summary script generated for video id: {video_id}',
-                sender ='YTS',
-                recipients = ['barwasomya@gmail.com']
-                )
-    msg.html = render_template('mail.html', summary=summary)
-
-    mail.send(msg)
-
     #summary = get_summary('''
     #    Hello man.
     #''')
     return summary
+
+
+@app.route("/mail", methods=["POST"])
+def mailme():
+    print("I truly came here")
+    summ = request.get_json()
+    vid = summ['id']
+    email_id = str(summ['mail_id'])
+    print(email_id)
+    summary = summ['body']
+    msg = Message(
+                f'Summary script generated for video id: {vid}',
+                sender ='YTS',
+                recipients = [email_id]
+                )
+    msg.html = render_template('mail.html', summary=summary)
+
+    mail.send(msg)
+    return "Done", 200
 
 
 def get_transcript(video_id):
