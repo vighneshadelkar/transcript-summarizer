@@ -8,6 +8,9 @@ import os
 # Define a variable to hold you app
 app = Flask(__name__)
 
+if not os.environ.get("Pass"):
+    raise RuntimeError("Password required")
+
 # configuration of mail
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
