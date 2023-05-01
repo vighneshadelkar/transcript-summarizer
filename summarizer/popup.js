@@ -2,6 +2,19 @@ const btn = document.getElementById("summary");
 const txt=document.getElementById("txt");
 let loadParent=document.getElementById("loading");
 
+const slider = document.getElementById("mySlider");
+const output = document.getElementById("sliderValue");
+
+
+// Display the default slider value
+output.innerHTML = slider.value;
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+    output.innerHTML = this.value;
+    //sendSliderValueToFlask(this.value);
+  }
+
 btn.addEventListener("click", function() {
     const q = document.getElementById("summedtxt");
     q.innerHTML = "";
@@ -33,7 +46,7 @@ btn.addEventListener("click", function() {
         var url = tabs[0].url;
         console.log(url);
 
-        var noturl = "http://127.0.0.1:5000/summary?url=" + url;
+        var noturl = "http://127.0.0.1:5000/summary?url=" + url + "$" + output.innerHTML;
         console.log(noturl);
         fetch(noturl) 
         .then((response) => response.text())
@@ -74,3 +87,22 @@ btnicon.onclick = function () {
         btncopy.style.left="27.16rem";
     }, 3000);
 };
+
+
+/*
+function sendSliderValueToFlask(value) {
+  fetch('/slider', {
+    method: 'POST',
+    body: JSON.stringify({ value: value }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => {
+    console.log(response);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+}
+*/
