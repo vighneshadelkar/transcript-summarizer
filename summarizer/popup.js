@@ -35,7 +35,7 @@ btn.addEventListener("click", function() {
     <div></div>
     <div></div>
     <div></div>`;
-    btn.style.width="100px";
+    btn.style.width="120px";
 
     btn.innerHTML = "Summarising...";
     txt.innerHTML="Your summary is getting ready..";
