@@ -71,24 +71,70 @@ const btnicon = document.getElementById("copyicon");
 btncopy.onclick = function () {
     navigator.clipboard.writeText(document.getElementById("summedtxt").innerHTML);
     btncopy.innerHTML="Copied!";
-    btncopy.style.left="26.8rem";
+    btncopy.style.left="22.14rem";
     setTimeout(() => {
         btncopy.innerHTML="Copy";
-        btncopy.style.left="27.16rem";
-    }, 3000);
+        btncopy.style.left="22.5rem";
+    }, 1000);
 };
 
 btnicon.onclick = function () {
     navigator.clipboard.writeText(document.getElementById("summedtxt").innerHTML);
     btncopy.innerHTML="Copied!";
-    btncopy.style.left="26.8rem";
+    btncopy.style.left="22.14rem";
     setTimeout(() => {
         btncopy.innerHTML="Copy";
-        btncopy.style.left="27.16rem";
-    }, 3000);
+        btncopy.style.left="22.5rem";
+    }, 1000);
 };
 
+const shrdown=document.getElementById("shrdown");
+const shrup=document.getElementById("shrup");
+const email=document.getElementById("email");
 
+shrdown.onclick=function () {
+  shrdown.style.display="none";
+  shrup.style.display="inline"
+  email.style.display="block"
+}
+shrup.onclick=function () {
+  shrdown.style.display="inline";
+  shrup.style.display="none"
+  email.style.display="none"
+}
+const btnmic=document.getElementById("speechtxt");
+btnmic.onclick=function () {
+    btnmic.innerHTML="Listening..";
+    btnmic.style.left="21.9rem";
+    btncopy.style.left="20.9rem";
+    btnicon.style.left="23.36rem";
+    setTimeout(() => {
+        btncopy.style.left="22.5rem";
+        btnicon.style.left="24.96rem";
+        btnmic.innerHTML="Listen";
+        btnmic.style.left="22.5rem";
+    }, 3000);
+}
+
+
+const btnshr=document.getElementById("btnshr");
+const summedtxt=document.getElementById("summedtxt");
+const alert=document.getElementById("alert");
+
+var t1=0;
+btnshr.onclick=function () {
+  // btnshr.style.display="none";
+  t1=0;
+  if (summedtxt.innerHTML=="") {
+      alert.style.display="block";
+      t1++;
+  }
+  if (t1>0) {
+    setTimeout(() => {
+      alert.style.display="none";
+    }, 5000);
+  }
+}
 /*
 function sendSliderValueToFlask(value) {
   fetch('/slider', {
