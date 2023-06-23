@@ -23,3 +23,15 @@
         "128": "/images/s-logo.png"
     }
 }
+  "name": "SummarEase",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html",
+    "default_icons": {
+        "16":"s-logo1.png"
+    }
+  },
+  "permissions": ["activeTab"]
+}
+

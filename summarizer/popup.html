@@ -13,7 +13,11 @@
 <body>
   <header>
     <div class="logo">
+
       <img src="./images/2023-03-12 (6).png" href="logo">
+
+      <img src="./images/summarease-logo.png" href="logo">
+
     </div>
   </header>
   <div class="container">
@@ -25,6 +29,7 @@
     <div class="opt">
       <h3>Your Summary:</h3>
       <!-- added copy icon -->
+
       <i class="ri-volume-down-line" id="speech"></i>
       <div id="speechtxt">
         Listen
@@ -32,11 +37,16 @@
       <i class="ri-file-copy-line copy" id="copyicon"></i>
       <div class="copy " id="copytext">
         Copy
+
+      <i class="ri-file-copy-line copy" id="copyicon"></i>
+      <div class="copy " id="copytext">Copy
+
       </div>
       <br>
       <br>
       <!-- copy html ends here -->
       <hr>
+
       <div class="slider-container">
         <input type="range" min="0" max="10" value="5" class="slider" id="mySlider">
         <span id="sliderValue">5</span>
@@ -73,10 +83,25 @@
           <!-- <i class="ri-file-copy-line copy" id="copyicon"></i> -->
         </div>
         <div id="alert"></div>
+
+
+      <div class="sum">
+        
+        <!-- new loading animation -->
+        <div id="loading"></div>
+        <!-- loading animation html ends  here -->
+
+        <!-- the summary will appear over here -->
+        <p id="summedtxt"></p>
+
       </div>
     </div>
   </div>
   <script src="./popup.js"></script>
 </body>
 
+
 </html>
+
+</html>
+
