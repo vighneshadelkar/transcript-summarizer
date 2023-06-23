@@ -1,4 +1,28 @@
 {
+    "name": "Summarizer",
+    "version": "0.1",
+    "manifest_version": 3,
+    "description": "An extension that saves your time by instantly summarizing youtube videos",
+    "permissions": ["activeTab"],
+    "host_permissions": ["http://127.0.0.1:5000/*"],
+    "action":{
+        "default_title": "Wanna summarize?",
+        "default_popup":"popup.html",
+        "default_icon": {
+            "16": "/images/s-logo.png",
+            "32": "/images/s-logo.png",
+            "48": "/images/s-logo.png",
+            "128": "/images/s-logo.png"
+        }
+    },
+
+    "icons": {
+        "16": "/images/s-logo.png",
+        "32": "/images/s-logo.png",
+        "48": "/images/s-logo.png",
+        "128": "/images/s-logo.png"
+    }
+}
   "name": "SummarEase",
   "version": "0.0.1",
   "manifest_version": 3,
@@ -10,3 +34,4 @@
   },
   "permissions": ["activeTab"]
 }
+

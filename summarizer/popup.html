@@ -13,7 +13,11 @@
 <body>
   <header>
     <div class="logo">
+
+      <img src="./images/2023-03-12 (6).png" href="logo">
+
       <img src="./images/summarease-logo.png" href="logo">
+
     </div>
   </header>
   <div class="container">
@@ -25,13 +29,61 @@
     <div class="opt">
       <h3>Your Summary:</h3>
       <!-- added copy icon -->
+
+      <i class="ri-volume-down-line" id="speech"></i>
+      <div id="speechtxt">
+        Listen
+      </div>
+      <i class="ri-file-copy-line copy" id="copyicon"></i>
+      <div class="copy " id="copytext">
+        Copy
+
       <i class="ri-file-copy-line copy" id="copyicon"></i>
       <div class="copy " id="copytext">Copy
+
       </div>
       <br>
       <br>
       <!-- copy html ends here -->
       <hr>
+
+      <div class="slider-container">
+        <input type="range" min="0" max="10" value="5" class="slider" id="mySlider">
+        <span id="sliderValue">5</span>
+      </div>
+
+      <div class="sum">
+
+        <!-- new loading animation -->
+        <div id="loading"></div>
+        <!-- loading animation html ends  here -->
+
+        <!-- the summary will appear over here -->
+        <p id="summedtxt"></p>
+      </div>
+      <!-- <br> -->
+
+<!-- <br> -->
+      <div class="shrmail">
+        <h3>Share Summary
+          <i class="ri-arrow-down-s-line" id="shrdown"></i>
+          <i class="ri-arrow-up-s-line" id="shrup"></i>
+        </h3>
+        <div id = "email" class="wrap-input100">
+          <input id = "mailbox" class="input100" type="text" name="email" placeholder="Email">
+          <span class="focus-input100"></span>
+          <div class="symbol-input100">
+            <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
+            <i class="ri-mail-line" aria-hidden="true"></i>
+          </div>
+          <div class="copy" id="btnshr">
+            Share
+            <i class="ri-share-line" id="shrr"></i>
+          </div>
+          <!-- <i class="ri-file-copy-line copy" id="copyicon"></i> -->
+        </div>
+        <div id="alert"></div>
+
 
       <div class="sum">
         
@@ -41,10 +93,15 @@
 
         <!-- the summary will appear over here -->
         <p id="summedtxt"></p>
+
       </div>
     </div>
   </div>
   <script src="./popup.js"></script>
 </body>
 
+
 </html>
+
+</html>
+
